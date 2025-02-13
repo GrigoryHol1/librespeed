@@ -15,7 +15,7 @@ image:
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: 
-  - registrysecret
+  - name: registrysecret
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
@@ -39,16 +39,16 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
-podSecurityContext: 
-  fsGroup: 1000
+podSecurityContext: {}
+  # fsGroup: 1000
 
-securityContext:
-  capabilities:
-    drop:
-    - ALL
-  readOnlyRootFilesystem: true
-  runAsNonRoot: true
-  runAsUser: 1000
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
@@ -128,7 +128,7 @@ tolerations: []
 affinity: {}
 
 externalsecret:
-  lockbox_id: e6qur3ri6b5tlv85j8t6
+  lockbox_id: e6q6r2vlgu4g3hrhp03r
 
 config:
   env:

@@ -54,7 +54,7 @@ spec:
           volumeMounts:
             - name: {{ include "helm.name" . }}-servers
               mountPath: /servers.json
-              subPath: servers.json
+              # subPath: servers.json
       volumes:
         - name: {{ include "helm.name" . }}-servers
           configMap:
